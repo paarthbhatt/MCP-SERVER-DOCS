@@ -1,0 +1,14 @@
+{
+  "name": "example_tool",
+  "description": "An example tool that echoes a message.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string",
+        "description": "The message to echo."
+      }
+    },
+    "required": ["message"]
+  }
+}
