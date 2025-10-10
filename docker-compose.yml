@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mcp-server:
+    image: mcp-server:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tools:/app/tools
+
+  web-server:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./website:/usr/share/nginx/html
+
+  database-server:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: your_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
